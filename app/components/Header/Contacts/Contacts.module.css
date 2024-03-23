@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2rem
+}
+
+.email {
+  display: flex;
+}
+
+.email_icon {
+  width: 24px;
+  height: 24px;
+}
+
+.phone {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: Inter, serif;
+  font-size: 1.2rem;
+}

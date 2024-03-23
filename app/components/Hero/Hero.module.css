@@ -1,0 +1,53 @@
+.container {
+    position: relative;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 3rem;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+}
+
+.link {
+    display: flex;
+    height: 100%;
+    align-items: flex-start;
+    gap: 0.4rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.link_icon {
+    animation-name: arrow;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes arrow {
+    0% {
+        opacity: 0;
+    }
+    0%, 33% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    33%, 67% {
+        opacity: 1;
+    }
+    67% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}

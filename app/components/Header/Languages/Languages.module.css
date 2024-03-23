@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: Playfair Display,Georgia,Cambria,Times New Roman,Times,serif;;
+  font-size: 1rem;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.btn:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn_selected {
+  color: rgba(255, 255, 255, 0.6);
+  cursor: default;
+}

@@ -1,0 +1,28 @@
+.btn {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  color: #323b49;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: .74rem;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: -.14px;
+  line-height: normal;
+  min-height: 36px;
+  padding: 2px 22px;
+  text-decoration: none;
+  transition: background-color .4s;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  width: 170px;
+}
+
+.btn:hover {
+  background-color: #eae9e9;
+  transition: background-color .4s;
+}
+
+

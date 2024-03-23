@@ -1,0 +1,38 @@
+.container {
+  background-color: #3f4a5c;
+  color: #fff;
+  padding: 4rem 0;
+}
+
+.wrapper {
+  max-width: 900px;
+}
+
+.h2 {
+  text-align: center;
+  word-spacing: 0.2rem;
+  letter-spacing: 0.03rem;
+  font-size: clamp(2.4rem, calc(2rem + 1.5vw), 3rem);
+  font-weight: 400;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 1rem auto 4rem;
+}
+
+.text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-family: inherit;
+  font-weight: 400;
+  max-width: 660px;
+  text-align: center;
+  margin: auto;
+  word-spacing: 0.1rem;
+}
+
+
+
