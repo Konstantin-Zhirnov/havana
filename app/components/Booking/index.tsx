@@ -12,7 +12,32 @@ import { LanguageProps } from '../../types'
 
 import styles from './Booking.module.css'
 
-const Booking = ({ language }: LanguageProps) => {
+interface IProps {
+  bookingTitle: string
+  bookingName: string
+  bookingEmail: string
+  bookingNationality: string
+  bookingTravelers: string
+  bookingDate: string
+  bookingTime: string
+  bookingAddress: string
+  bookingAdditional: string
+  bookingGuide: string
+  bookingButton: string
+}
+const Booking = ({
+  bookingTitle,
+  bookingName,
+  bookingEmail,
+  bookingNationality,
+  bookingTravelers,
+  bookingDate,
+  bookingTime,
+  bookingAddress,
+  bookingAdditional,
+  bookingGuide,
+  bookingButton,
+}: IProps) => {
   const [check, setCheck] = React.useState(false)
 
   const schema = yup
@@ -91,136 +116,6 @@ const Booking = ({ language }: LanguageProps) => {
     },
   }
 
-  const getTitle = () => {
-    switch (language) {
-      case 'En':
-        return 'Booking Information'
-      case 'Es':
-        return 'Información de Reserva'
-      case 'Fr':
-        return 'Informations de Réservation'
-      case 'Ge':
-        return 'Buchungsinformationen'
-    }
-  }
-
-  const getName = () => {
-    switch (language) {
-      case 'En':
-        return 'Full Name:'
-      case 'Es':
-        return 'Nombre Completo:'
-      case 'Fr':
-        return 'Nom Complet:'
-      case 'Ge':
-        return 'Vollständiger Name:'
-    }
-  }
-
-  const getEmail = () => {
-    switch (language) {
-      case 'En':
-        return 'Email:'
-      case 'Es':
-        return 'Correo Electrónico:'
-      case 'Fr':
-        return 'Courriel:'
-      case 'Ge':
-        return 'Email:'
-    }
-  }
-
-  const getNationality = () => {
-    switch (language) {
-      case 'En':
-        return 'Nationality:'
-      case 'Es':
-        return 'Nacionalidad:'
-      case 'Fr':
-        return 'Nationalité:'
-      case 'Ge':
-        return 'Nationalitaet:'
-    }
-  }
-
-  const getTravelers = () => {
-    switch (language) {
-      case 'En':
-        return 'Number of travelers:'
-      case 'Es':
-        return 'Número de viajeros:'
-      case 'Fr':
-        return 'Nombre de voyageurs:'
-      case 'Ge':
-        return 'Anzahl der Reisenden:'
-    }
-  }
-
-  const getDate = () => {
-    switch (language) {
-      case 'En':
-        return 'Pick Up Date:'
-      case 'Es':
-        return 'Fecha de Recogida:'
-      case 'Fr':
-        return 'Date de Prise En Charge:'
-      case 'Ge':
-        return 'Abholdatum:'
-    }
-  }
-
-  const getTime = () => {
-    switch (language) {
-      case 'En':
-        return 'Pick Up Time:'
-      case 'Es':
-        return 'Hora de Recogida:'
-      case 'Fr':
-        return 'Heure de Prise En Charge:'
-      case 'Ge':
-        return 'Abholzeit:'
-    }
-  }
-
-  const getAddress = () => {
-    switch (language) {
-      case 'En':
-        return 'Pick Up Address:'
-      case 'Es':
-        return 'Dirección de Recogida:'
-      case 'Fr':
-        return 'Adresse de Ramassage:'
-      case 'Ge':
-        return 'Adresse abholen:'
-    }
-  }
-
-  const getAdditional = () => {
-    switch (language) {
-      case 'En':
-        return 'Additional information or Request:'
-      case 'Es':
-        return 'Información adicional o Solicitud:'
-      case 'Fr':
-        return 'Informations supplémentaires ou Demande:'
-      case 'Ge':
-        return 'Zusätzliche Informationen oder Anfrage:'
-    }
-  }
-
-  const getGuide = () => {
-    switch (language) {
-      case 'En':
-        return 'Include the guide service on the route.'
-      case 'Es':
-        return 'Incluir el servicio de guía en la ruta.'
-      case 'Fr':
-        return "Inclure le service de guide sur l'itinéraire."
-      case 'Ge':
-        return 'Fügen Sie den Reiseleiterservice auf der Route hinzu.'
-    }
-  }
-
   return (
     <motion.section
       initial="hidden"
@@ -237,24 +132,29 @@ const Booking = ({ language }: LanguageProps) => {
           variants={textAnimation}
           viewport={{ once: true }}
         >
-          {getTitle()}
+          {bookingTitle}
         </motion.h3>
         <div className={styles.divider} />
 
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-          <FormItem register={register} errors={errors} name="name" label={getName()} />
-          <FormItem register={register} errors={errors} name="email" label={getEmail()} />
+          <FormItem register={register} errors={errors} name="name" label={bookingName} />
+          <FormItem register={register} errors={errors} name="email" label={bookingEmail} />
           <FormItem
             register={register}
             errors={errors}
             name="nationality"
-            label={getNationality()}
+            label={bookingNationality}
           />
-          <FormItem register={register} errors={errors} name="travelers" label={getTravelers()} />
-          <FormItem register={register} errors={errors} name="date" label={getDate()} />
-          <FormItem register={register} errors={errors} name="time" label={getTime()} />
-          <FormItem register={register} errors={errors} name="address" label={getAddress()} />
-          <FormItem register={register} errors={errors} name="additional" label={getAdditional()} />
+          <FormItem register={register} errors={errors} name="travelers" label={bookingTravelers} />
+          <FormItem register={register} errors={errors} name="date" label={bookingDate} />
+          <FormItem register={register} errors={errors} name="time" label={bookingTime} />
+          <FormItem register={register} errors={errors} name="address" label={bookingAddress} />
+          <FormItem
+            register={register}
+            errors={errors}
+            name="additional"
+            label={bookingAdditional}
+          />
           <div className={styles.checkbox}>
             <input
               type="checkbox"
@@ -264,12 +164,12 @@ const Booking = ({ language }: LanguageProps) => {
               className={styles.checkbox_input}
             />
             <label htmlFor="checkbox" className={styles.checkbox_label}>
-              {getGuide()}
+              {bookingGuide}
             </label>
           </div>
 
           <div className={styles.fees}>
-            <FormButton />
+            <FormButton bookingButton={bookingButton} />
           </div>
         </form>
       </Wrapper>

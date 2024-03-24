@@ -1,9 +1,12 @@
 import styles from './FormButton.module.css'
 
-const FormButton = () => {
+interface IProps {
+  bookingButton: string
+}
+const FormButton = ({ bookingButton }: IProps) => {
   return (
     <button type="submit" className={styles.btn}>
-      Booking
+      {bookingButton}
     </button>
   )
 }

@@ -1,40 +1,74 @@
 'use client'
 
+import React from 'react'
+import { StoreContext } from '@/app/context'
+
 import { Hero } from './components/Hero'
 import { Havana } from './components/Havana'
 import { Introduction } from './components/Introduction'
-import { Divider } from './components/Divider'
+
 import { TextAndImage } from './components/TextAndImage'
 import { Conclusion } from './components/Conclusion'
 import { Images } from './components/Images'
 import { Booking } from './components/Booking'
-import React from 'react'
-import { StoreContext } from '@/app/context'
 
 export default function Home() {
   const store = React.useContext(StoreContext)
-
   if (!store) throw new Error('useStore must be used within a StoreProvider')
-
   const { state } = store
+
+  const {
+    scrollFirst,
+    scrollSecond,
+    havanaTitle,
+    havanaText,
+    introductionTitle,
+    introductionText,
+    firstText,
+    secondText,
+    conclusion,
+    bookingTitle,
+    bookingName,
+    bookingEmail,
+    bookingNationality,
+    bookingTravelers,
+    bookingDate,
+    bookingTime,
+    bookingAddress,
+    bookingAdditional,
+    bookingGuide,
+    bookingButton,
+  } = state
 
   return (
     <>
-      <Hero language={state.language} />
+      <Hero scrollFirst={scrollFirst} scrollSecond={scrollSecond} />
 
-      <Havana language={state.language} />
+      <Havana havanaTitle={havanaTitle} havanaText={havanaText} />
 
-      <Introduction language={state.language} />
+      <Introduction introductionTitle={introductionTitle} introductionText={introductionText} />
 
-      <TextAndImage position="first" custom={2} language={state.language} />
+      <TextAndImage position="first" custom={2} text={firstText} />
 
-      <TextAndImage position="second" custom={1} language={state.language} />
+      <TextAndImage position="second" custom={1} text={secondText} />
 
-      <Conclusion language={state.language} />
+      <Conclusion conclusion={conclusion} />
 
       <Images />
 
-      <Booking language={state.language} />
+      <Booking
+        bookingTitle={bookingTitle}
+        bookingName={bookingName}
+        bookingEmail={bookingEmail}
+        bookingNationality={bookingNationality}
+        bookingTravelers={bookingTravelers}
+        bookingDate={bookingDate}
+        bookingTime={bookingTime}
+        bookingAddress={bookingAddress}
+        bookingAdditional={bookingAdditional}
+        bookingGuide={bookingGuide}
+        bookingButton={bookingButton}
+      />
     </>
   )
 }
