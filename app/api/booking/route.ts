@@ -19,7 +19,8 @@ export async function POST(req: Request) {
   try {
     await transporter.sendMail({
       from: 'admin@helper.plus',
-      to: 'amramcueva1971@gmail.com',
+      // to: 'amramcueva1971@gmail.com',
+      to: 'zhirnov-11.06@mail.ru',
       subject: 'Booking from website',
       html: `<div><b>Booking from website: havana-classic-cars.com</b></div>
           <p><b>Name:</b> ${body.name}<br/>
@@ -29,7 +30,7 @@ export async function POST(req: Request) {
           <b>Date:</b> ${body.date}<br/>
           <b>Time:</b> ${body.time}<br/>
           <b>Address:</b> ${body.address}<br/>
-           <b>Additional:</b> ${body.additional}<br/>
+          <b>Additional:</b> ${body.additional}<br/>
           <b>Guide:</b> ${body.guide}</p>`,
     })
   } catch (error) {
