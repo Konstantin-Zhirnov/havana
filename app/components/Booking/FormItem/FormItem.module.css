@@ -1,5 +1,6 @@
 .input_container {
   width: 30%;
+  min-width: 30%;
 }
 .input_container.address {
   width: 100%;
@@ -15,6 +16,7 @@
 
 .input {
   width: 100%;
+  min-width: 100%;
   border: 1px solid #3F4A5C;
   border-radius: 4px;
   margin-top: 2px;
@@ -37,12 +39,14 @@
 @media (max-width: 680px) {
   .input_container {
     width: 46%;
+    min-width: 46%;
   }
 }
 
 @media (max-width: 460px) {
   .input_container {
     width: 100%;
+    min-width: 100%;
   }
 }
 
