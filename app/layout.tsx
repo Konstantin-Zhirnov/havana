@@ -11,6 +11,7 @@ import './globals.css'
 
 const PlayfairDisplay = Playfair_Display({
   weight: ['400', '700'],
+  subsets: ['latin'],
   display: 'swap',
 })
 
