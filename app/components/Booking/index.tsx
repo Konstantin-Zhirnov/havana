@@ -1,4 +1,5 @@
 'use client'
+
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -8,9 +9,9 @@ import * as yup from 'yup'
 import { Wrapper } from '../Wrapper'
 import { FormItem } from './FormItem'
 import { FormButton } from './FormButton'
-import { LanguageProps } from '../../types'
 
 import styles from './Booking.module.css'
+import { animation } from '@/app/constants'
 
 interface IProps {
   bookingTitle: string
@@ -90,46 +91,14 @@ const Booking = ({
     })
   }
 
-  const backgroundAnimation = {
-    hidden: {
-      background: 'transparent',
-      opacity: 0,
-      y: 40,
-    },
-    visible: {
-      background: '#3f4a5c',
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8 },
-    },
-  }
-
-  const textAnimation = {
-    hidden: {
-      opacity: 0,
-      y: 20,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, delay: 1 },
-    },
-  }
-
   return (
-    <motion.section
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ amount: 0.2, once: true }}
-      variants={backgroundAnimation}
-      className={styles.container}
-    >
+    <motion.section initial="hidden" whileInView="visible" className={styles.container}>
       <Wrapper classes={styles.wrapper}>
         <motion.h3
           className={styles.h3}
           initial="hidden"
           whileInView="visible"
-          variants={textAnimation}
+          variants={animation}
           viewport={{ once: true }}
         >
           {bookingTitle}
