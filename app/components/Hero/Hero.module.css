@@ -30,6 +30,12 @@
     animation-iteration-count: infinite;
 }
 
+@media (max-width: 680px) {
+    .footer {
+        height: 5rem;
+    }
+}
+
 @keyframes arrow {
     0% {
         opacity: 0;

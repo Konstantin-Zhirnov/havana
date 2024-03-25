@@ -20,12 +20,12 @@ const Introduction = ({ introductionTitle, introductionText }: IProps) => {
           whileInView="visible"
           variants={animation}
           viewport={{ once: true }}
-          custom={2}
+          custom={1}
         >
           {introductionTitle}
         </motion.h3>
 
-        <Divider custom={2} />
+        <Divider custom={1} />
 
         <motion.p
           className={styles.text}

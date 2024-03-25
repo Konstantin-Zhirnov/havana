@@ -69,7 +69,7 @@ const TextAndImage = ({ position, custom, text }: IProps) => {
               whileInView="visible"
               variants={animation}
               viewport={{ once: true }}
-              custom={custom + 1}
+              custom={custom}
             >
               <img src={getSrc()} className={styles.image} alt="Havana Classic Car Tours" />
             </motion.div>
