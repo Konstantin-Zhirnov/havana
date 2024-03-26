@@ -17,7 +17,8 @@ const PlayfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'Havana classic car tours',
-  description: 'Havana classic car tours',
+  description:
+    'One of the most iconic ways to immerse oneself in the spirit of Havana is through a tour with Havana Classic Cars. You will enjoy a relaxing ride, travel with ease with an experience driver and witness authentic Cuban culture and lifestyle.',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
