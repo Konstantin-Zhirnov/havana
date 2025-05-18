@@ -4,28 +4,29 @@ import { Wrapper } from '../Wrapper'
 import { Divider } from '../Divider'
 import { animation } from '../../constants'
 
-import styles from './Introduction.module.css'
+import styles from './Text.module.css'
 
 interface IProps {
-  introductionTitle: string
-  introductionText: string
+  text: string
+  title: string
 }
-const Introduction = ({ introductionTitle, introductionText }: IProps) => {
+
+export const Text = ({ text, title }: IProps) => {
   return (
     <motion.section className={styles.container} initial="hidden" whileInView="visible">
+      <motion.h3
+        className={styles.h3}
+        initial="hidden"
+        whileInView="visible"
+        variants={animation}
+        viewport={{ once: true }}
+      >
+        {title}
+      </motion.h3>
+
+      <Divider />
+
       <Wrapper classes={styles.wrapper}>
-        <motion.h3
-          className={styles.h3}
-          initial="hidden"
-          whileInView="visible"
-          variants={animation}
-          viewport={{ once: true }}
-        >
-          {introductionTitle}
-        </motion.h3>
-
-        <Divider />
-
         <motion.p
           className={styles.text}
           initial="hidden"
@@ -33,11 +34,9 @@ const Introduction = ({ introductionTitle, introductionText }: IProps) => {
           variants={animation}
           viewport={{ once: true }}
         >
-          {introductionText}
+          {text}
         </motion.p>
       </Wrapper>
     </motion.section>
   )
 }
-
-export { Introduction }

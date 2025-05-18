@@ -8,6 +8,8 @@ import { Havana } from './components/Havana'
 import { Introduction } from './components/Introduction'
 
 import { TextAndImage } from './components/TextAndImage'
+import { Galery } from './components/Galery'
+import { Text } from './components/Text'
 import { Conclusion } from './components/Conclusion'
 import { Images } from './components/Images'
 import { Booking } from './components/Booking'
@@ -24,7 +26,9 @@ export default function Home() {
     havanaText,
     introductionTitle,
     introductionText,
-    firstText,
+    firstText_1,
+    firstText_2,
+    firstText_3,
     secondText,
     conclusion,
     bookingTitle,
@@ -38,6 +42,8 @@ export default function Home() {
     bookingAdditional,
     bookingGuide,
     bookingButton,
+    textTitle,
+    conclusionTitle,
   } = state
 
   return (
@@ -48,13 +54,13 @@ export default function Home() {
 
       <Introduction introductionTitle={introductionTitle} introductionText={introductionText} />
 
-      <TextAndImage position="first" custom={2} text={firstText} />
+      <TextAndImage text_1={firstText_1} text_2={firstText_2} text_3={firstText_3} />
 
-      <TextAndImage position="second" custom={1} text={secondText} />
+      <Galery />
 
-      <Conclusion conclusion={conclusion} />
+      <Text text={secondText} title={textTitle} />
 
-      <Images />
+      <Conclusion conclusion={conclusion} title={conclusionTitle} />
 
       <Booking
         bookingTitle={bookingTitle}

@@ -1,0 +1,37 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+.wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  aspect-ratio: 9 / 6;
+}
+.wrapper img:hover {
+  transform: scale(1.03);
+}
+
+
+.icon {
+  width: 46px;
+  height: 46px;
+}
+
+@keyframes zoomEffect {
+    0% {transform: scale(1, 1)}
+    50% {transform: scale(1.2, 1.2)}
+    100% {transform: scale(1, 1)}
+}
+
+
+
+
+
+

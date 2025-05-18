@@ -23,7 +23,7 @@ export async function POST(req: Request) {
       subject: 'Booking from website',
       html: `<div><b>Booking from website: havana-classic-cars.com</b></div>
           <p><b>Name:</b> ${body.name}<br/>
-          <b>Email:</b> ${body.email}<br/>
+          <b>Phone:</b> ${body.phone}<br/>
           <b>Nationality:</b> ${body.nationality}<br/>
           <b>Travelers:</b> ${body.travelers}<br/>
           <b>Date:</b> ${body.date}<br/>

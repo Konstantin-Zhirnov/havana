@@ -6,12 +6,13 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { motion } from 'framer-motion'
 import * as yup from 'yup'
 
+import { animation } from '@/app/constants'
+
 import { Wrapper } from '../Wrapper'
 import { FormItem } from './FormItem'
 import { FormButton } from './FormButton'
 
 import styles from './Booking.module.css'
-import { animation } from '@/app/constants'
 
 interface IProps {
   bookingTitle: string
@@ -26,6 +27,7 @@ interface IProps {
   bookingGuide: string
   bookingButton: string
 }
+
 const Booking = ({
   bookingTitle,
   bookingName,
@@ -107,23 +109,31 @@ const Booking = ({
 
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           <FormItem register={register} errors={errors} name="name" label={bookingName} />
+
           <FormItem register={register} errors={errors} name="email" label={bookingEmail} />
+
           <FormItem
             register={register}
             errors={errors}
             name="nationality"
             label={bookingNationality}
           />
+
           <FormItem register={register} errors={errors} name="travelers" label={bookingTravelers} />
+
           <FormItem register={register} errors={errors} name="date" label={bookingDate} />
+
           <FormItem register={register} errors={errors} name="time" label={bookingTime} />
+
           <FormItem register={register} errors={errors} name="address" label={bookingAddress} />
+
           <FormItem
             register={register}
             errors={errors}
             name="additional"
             label={bookingAdditional}
           />
+
           <div className={styles.checkbox}>
             <input
               type="checkbox"

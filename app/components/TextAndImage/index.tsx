@@ -11,33 +11,16 @@ import 'react-photo-view/dist/react-photo-view.css'
 import styles from './TextAndImage.module.css'
 
 interface IProps {
-  position: 'first' | 'second'
-  custom: number
-  text: string
+  text_1: string
+  text_2: string
+  text_3: string
 }
-const TextAndImage = ({ position, custom, text }: IProps) => {
-  const getSrc = () => {
-    if (position === 'first') return '/assets/4.webp'
-    return '/assets/5.webp'
-  }
-
+export const TextAndImage = ({ text_1, text_2, text_3 }: IProps) => {
   return (
     <motion.section className={styles.container} initial="hidden" whileInView="visible">
-      <Divider custom={2} />
-      <Wrapper classes={cn(styles.wrapper, { [styles.right]: position === 'first' })}>
-        {position === 'first' ? (
-          <motion.p
-            className={styles.text}
-            initial="hidden"
-            whileInView="visible"
-            variants={animation}
-            viewport={{ once: true }}
-            custom={custom}
-          >
-            {text}
-          </motion.p>
-        ) : null}
+      <Divider />
 
+      <Wrapper classes={styles.wrapper}>
         <PhotoProvider
           speed={() => 800}
           easing={(type) =>
@@ -62,35 +45,42 @@ const TextAndImage = ({ position, custom, text }: IProps) => {
             )
           }}
         >
-          <PhotoView src={getSrc()}>
+          <PhotoView src="/assets/4.webp">
             <motion.div
               className={styles.image_container}
               initial="hidden"
               whileInView="visible"
               variants={animation}
               viewport={{ once: true }}
-              custom={custom}
             >
-              <img src={getSrc()} className={styles.image} alt="Havana Classic Car Tours" />
+              <img src="/assets/4.webp" className={styles.image} alt="Havana Classic Car Tours" />
             </motion.div>
           </PhotoView>
         </PhotoProvider>
 
-        {position === 'second' ? (
-          <motion.p
-            className={styles.text}
-            initial="hidden"
-            whileInView="visible"
-            variants={animation}
-            viewport={{ once: true }}
-            custom={custom}
-          >
-            {text}
-          </motion.p>
-        ) : null}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={animation}
+          viewport={{ once: true }}
+        >
+          <p className={styles.text_1}>{text_1}</p>
+
+          <p className={styles.text_2}>{text_2}</p>
+        </motion.div>
+      </Wrapper>
+
+      <Wrapper classes={styles.wrapper}>
+        <motion.p
+          className={styles.text_3}
+          initial="hidden"
+          whileInView="visible"
+          variants={animation}
+          viewport={{ once: true }}
+        >
+          {text_3}
+        </motion.p>
       </Wrapper>
     </motion.section>
   )
 }
-
-export { TextAndImage }
