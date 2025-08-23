@@ -3,10 +3,7 @@
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { motion } from 'framer-motion'
 import * as yup from 'yup'
-
-import { animation } from '@/app/constants'
 
 import { Wrapper } from '../Wrapper'
 import { FormItem } from './FormItem'
@@ -94,17 +91,9 @@ const Booking = ({
   }
 
   return (
-    <motion.section initial="hidden" whileInView="visible" className={styles.container}>
+    <section className={styles.container}>
       <Wrapper classes={styles.wrapper}>
-        <motion.h3
-          className={styles.h3}
-          initial="hidden"
-          whileInView="visible"
-          variants={animation}
-          viewport={{ once: true }}
-        >
-          {bookingTitle}
-        </motion.h3>
+        <h3 className={styles.h3}>{bookingTitle}</h3>
         <div className={styles.divider} />
 
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -152,7 +141,7 @@ const Booking = ({
           </div>
         </form>
       </Wrapper>
-    </motion.section>
+    </section>
   )
 }
 
