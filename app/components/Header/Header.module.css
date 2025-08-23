@@ -7,13 +7,11 @@
     background-color: rgba(0,0,0,.25);
     transition: all .8s;
     padding: 0.4rem 0;
-    height: 84px;
 }
 
 .container.scroll {
     background-color: #3f4a5c;
     transition: all .8s;
-    height: 40px;
 }
 
 .header {
@@ -23,12 +21,6 @@
 }
 
 @media (max-width: 680px) {
-    .container {
-        height: 138px;
-    }
-    .container.scroll {
-        height: 96px;
-    }
     .header {
         flex-direction: column;
         gap: 0.4rem;
