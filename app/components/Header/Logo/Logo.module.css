@@ -9,13 +9,21 @@
   color: #FFFFFF;
   font-size: 2.4rem;
   text-transform: uppercase;
-  font-family: Playfair Display,Georgia,Cambria,Times New Roman,Times,serif;
-  transition: all 0.7s;
+  font-family: Playfair Display, Georgia, Cambria, Times New Roman, Times, serif;
+  opacity: 1;
+  max-height: 100px;       /* ограничиваем */
+  margin: 1rem 0;
+  overflow: hidden;        /* чтобы текст не торчал */
+  transition:
+          opacity 0.7s ease,
+          max-height 0.7s ease,
+          margin 0.7s ease;
 }
 
 .container_h1.scroll {
-  font-size: 0;
-  transition: all 0.7s;
+  opacity: 0;
+  max-height: 0;           /* плавно схлопывается */
+  margin: 0;               /* убираем отступ */
 }
 
 .container_h2 {
