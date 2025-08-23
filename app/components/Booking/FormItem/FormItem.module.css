@@ -3,6 +3,7 @@
 }
 .input_container.address {
   width: 100%;
+  max-width: 100%;
 }
 
 .input_label {

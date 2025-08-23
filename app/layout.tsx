@@ -27,7 +27,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={PlayfairDisplay.className}>
         <StoreProvider>
           <Header />
+
           <main>{children}</main>
+
           <WhatsApp />
         </StoreProvider>
       </body>
