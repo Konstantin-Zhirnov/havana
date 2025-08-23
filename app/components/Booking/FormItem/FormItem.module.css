@@ -3,7 +3,6 @@
 }
 .input_container.address {
   width: 100%;
-  max-width: 100%;
 }
 
 .input_label {
@@ -45,6 +44,7 @@
 @media (max-width: 460px) {
   .input_container {
     width: 100%;
+    max-width: 100%;
   }
 }
 
